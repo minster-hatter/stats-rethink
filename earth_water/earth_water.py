@@ -22,9 +22,10 @@ CI = config.getfloat("parameters", "CREDIBLE_INTERVAL")
 W_OBSERVED = 6
 N = 9
 
+# Model specification:
+# W ~ Binomial(N, p)
+# p ~ Uniform(0, 1)
 with Model() as model:
-    # W ~ Binomial(N, p)
-    # p ~ Uniform(0, 1)
     # Prior.
     p = Uniform("p", 0.0, 1.0)
     # Likelihood.
